@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: gradio-csv-viewer-pwa
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: python app.py
+    healthCheckPath: /healthz
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.12.3
